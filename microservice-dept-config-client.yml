@@ -44,7 +44,7 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springcloud2?useSSL=false
+    url: jdbc:mysql://localhost:3306/springcloud3?useSSL=false
     type: com.zaxxer.hikari.HikariDataSource
 #配置mybatis
 mybatis:
