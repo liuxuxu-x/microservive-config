@@ -1,0 +1,67 @@
+spring: 
+  profiles:
+    active:
+    - dev
+--- 
+server:
+  port: 8001
+spring: 
+   profiles: dev
+   application: 
+    name: microservice-dept-config-client
+   datasource: 
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud1?useSSL=false
+    type: com.zaxxer.hikari.HikariDataSource
+#配置mybatis
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+ 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka8761.com:8761/eureka
+  instance:
+    instance-id: microservice-dept8001
+    prefer-ip-address: true
+ 
+info:
+  app.name: liuxuxu-microservice
+  company.name: www.liuxuxu.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+---
+server:
+  port: 8001
+spring: 
+   profiles: dev
+   application: 
+    name: microservice-dept-config-client
+   datasource: 
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud2?useSSL=false
+    type: com.zaxxer.hikari.HikariDataSource
+#配置mybatis
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+ 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka8761.com:8761/eureka
+  instance:
+    instance-id: microservice-dept8001
+    prefer-ip-address: true
+ 
+info:
+  app.name: liuxuxu-microservice
+  company.name: www.liuxuxu.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
